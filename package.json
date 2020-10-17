@@ -5,5 +5,9 @@
   "repository": "git@github.com:kn3ny/jest-playground.git",
   "author": "kn3ny",
   "license": "UNLICENSED",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  }
 }
