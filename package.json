@@ -22,7 +22,9 @@
   "scripts": {
     "dev": "ts-node ./src/index.ts",
     "test": "jest --coverage",
-    "prettier": "prettier --write .",
-    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "eslint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   }
 }
