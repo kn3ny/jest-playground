@@ -10,4 +10,10 @@ module.exports = {
       "prettier",
       "prettier/@typescript-eslint",
     ],
+    "parserOptions": {
+        "ecmaVersion": 2019,
+    },
+    "env": {
+        "node": true
+    },
   };
