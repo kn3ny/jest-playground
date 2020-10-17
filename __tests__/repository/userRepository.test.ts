@@ -14,18 +14,20 @@ describe("UserRepository", () => {
   });
 
   test("find() with mocked dependency", async () => {
-    const { UserApiAdaptor: MockedUserApiAdaptor } = jest.requireActual("~/infrastructure/userApiAdaptor");
+    const { UserApiAdaptor: MockedUserApiAdaptor } = jest.requireActual(
+      "~/infrastructure/userApiAdaptor"
+    );
 
     const mockedUserApiAdaptor: UserApiAdaptor = new MockedUserApiAdaptor();
     mockedUserApiAdaptor.getUser = jest.fn().mockImplementation(async () => {
       return Promise.resolve({
         id: 2,
-        name: "Mocked name"
+        name: "Mocked name",
       });
     });
 
     const repo = new UserRepository({
-      adaptor: mockedUserApiAdaptor
+      adaptor: mockedUserApiAdaptor,
     });
 
     await expect(repo.find(1)).resolves.toStrictEqual({
@@ -38,16 +40,18 @@ describe("UserRepository", () => {
   });
 
   test("find() with mocked static variable", async () => {
-    const { UserApiAdaptor: MockedUserApiAdaptor } = jest.requireActual("~/infrastructure/userApiAdaptor");
+    const { UserApiAdaptor: MockedUserApiAdaptor } = jest.requireActual(
+      "~/infrastructure/userApiAdaptor"
+    );
     MockedUserApiAdaptor.DUMMY_DATA = {
       id: 3,
-      name: "Static-mocked name"
+      name: "Static-mocked name",
     };
 
     const mockedUserApiAdaptor: UserApiAdaptor = new MockedUserApiAdaptor();
 
     const repo = new UserRepository({
-      adaptor: mockedUserApiAdaptor
+      adaptor: mockedUserApiAdaptor,
     });
 
     await expect(repo.find(1)).resolves.toStrictEqual({
@@ -56,20 +60,21 @@ describe("UserRepository", () => {
     });
   });
 
-  
   test("find() with force-mocked value", async () => {
-    const { UserApiAdaptor: MockedUserApiAdaptor } = jest.requireActual("~/infrastructure/userApiAdaptor");
+    const { UserApiAdaptor: MockedUserApiAdaptor } = jest.requireActual(
+      "~/infrastructure/userApiAdaptor"
+    );
 
     const mockedUserApiAdaptor: UserApiAdaptor = new MockedUserApiAdaptor();
     mockedUserApiAdaptor.getUser = jest.fn().mockImplementation(async () => {
       return Promise.resolve({
         id: 4,
-        name: "Force-mocked name"
+        name: "Force-mocked name",
       });
     });
 
     const repo = new UserRepository({
-      adaptor: new UserApiAdaptor()
+      adaptor: new UserApiAdaptor(),
     });
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
