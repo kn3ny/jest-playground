@@ -1,8 +1,8 @@
 import { UserRepository } from "./repository/userRepository";
 
-const main = () => {
+const main = async () => {
     const userRepository = new UserRepository();
-    const user = userRepository.find();
+    const user = await userRepository.find(1);
     console.log(JSON.stringify(user, null, 2));
 }
 
