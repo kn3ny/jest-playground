@@ -1,4 +1,4 @@
-import { UserApiAdaptor } from "../infrastructure/userApiAdaptor";
+import { UserApiAdaptor } from "~/infrastructure/userApiAdaptor";
 
 export class UserRepository {
     private _adaptor: UserApiAdaptor;
