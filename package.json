@@ -1,0 +1,9 @@
+{
+  "name": "jest-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:kn3ny/jest-playground.git",
+  "author": "kn3ny",
+  "license": "UNLICENSED",
+  "private": true
+}
