@@ -3,7 +3,7 @@ const DUMMY_DATA = {
     name: "Real name"
 };
 
-export class UserApiAdapter {
+export class UserApiAdaptor {
     async getUser(id: number) {
         return Promise.resolve(DUMMY_DATA);
     }

@@ -1,13 +1,13 @@
-import { UserApiAdapter } from "../infrastructure/userApiAdapter";
+import { UserApiAdaptor } from "../infrastructure/userApiAdaptor";
 
 export class UserRepository {
-    private _adapter: UserApiAdapter;
+    private _adaptor: UserApiAdaptor;
 
-    constructor(){
-        this._adapter = new UserApiAdapter();
+    constructor({ adaptor }: { adaptor: UserApiAdaptor }){
+        this._adaptor = adaptor;
     }
 
     async find(id: number) {
-        return this._adapter.getUser(1);
+        return this._adaptor.getUser(1);
     }
 }
