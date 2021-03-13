@@ -1,9 +1,9 @@
-import { UserApiAdaptor } from "./infrastructure/userApiAdaptor";
+import { UserApiAdapter } from "./infrastructure/userApiAdapter";
 import { UserRepository } from "./repository/userRepository";
 
 const main = async () => {
   const userRepository = new UserRepository({
-    adaptor: new UserApiAdaptor(),
+    adapter: new UserApiAdapter(),
   });
 
   const user = await userRepository.find(1);
